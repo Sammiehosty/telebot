@@ -240,7 +240,7 @@ const Messages: React.FC = () => {
                         )}
                         <p className="leading-tight">{msg.message_text}</p>
                         <div className="flex items-center justify-end gap-1 mt-1">
-                          <span className="text-[10px] opacity-60">
+                          <span className="text-[6px] opacity-60">
                             {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                           {!isUser && (
@@ -276,7 +276,7 @@ const Messages: React.FC = () => {
               <div className="flex items-center gap-3">
                
                 <label className="p-2 text-[#54656f] hover:bg-[#d1d7db] rounded-full transition-colors cursor-pointer">
-                  <Paperclip size={24} />
+                  <Paperclip size={12} />
                   <input type="file" className="hidden" accept="image/*,video/*" onChange={handleFileChange} />
                 </label>
                 <form onSubmit={handleSend} className="flex-1 flex gap-3">
@@ -285,14 +285,14 @@ const Messages: React.FC = () => {
                     value={reply}
                     onChange={(e) => setReply(e.target.value)}
                     placeholder="Type a message"
-                    className="flex-1 px-4 py-3 bg-white border-none rounded-lg text-sm focus:outline-none shadow-sm"
+                    className="flex-1 px-2 py-2 bg-white border-none rounded-lg text-sm focus:outline-none shadow-sm"
                   />
                   <button
                     type="submit"
                     disabled={sending || (!reply.trim() && !selectedFile)}
                     className="p-3 bg-wa-teal text-white hover:bg-wa-green rounded-full transition-all shadow-md active:scale-95"
                   >
-                    {sending ? <Loader2 className="animate-spin" size={24} /> : <Send size={24} />}
+                    {sending ? <Loader2 className="animate-spin" size={12} /> : <Send size={12} />}
                   </button>
                 </form>
               </div>
