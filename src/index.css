@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --color-wa-green: #075E54;
+  --color-wa-teal: #128C7E;
+  --color-wa-bright: #25D366;
+  --color-wa-bg: #F0F2F5;
+  --color-wa-bubble-in: #FFFFFF;
+  --color-wa-bubble-out: #DCF8C6;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-[#111b21] bg-[#dadbd3];
+    font-family: var(--font-sans);
+  }
+}
+
+/* WhatsApp Chat Background Pattern */
+.wa-bg-pattern {
+  background-color: #e5ddd5;
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+/* WhatsApp Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+.chat-bubble-out {
+  position: relative;
+  background-color: #DCF8C6;
+  color: #303030;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  font-size: 14px;
+  max-width: 85%;
+}
+
+.chat-bubble-out::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #DCF8C6;
+  border-right: 10px solid transparent;
+}
+
+.chat-bubble-in {
+  position: relative;
+  background-color: #FFFFFF;
+  color: #303030;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  font-size: 14px;
+  max-width: 85%;
+}
+
+.chat-bubble-in::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #FFFFFF;
+  border-left: 10px solid transparent;
+}
