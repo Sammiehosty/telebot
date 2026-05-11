@@ -274,7 +274,7 @@ const Messages: React.FC = () => {
                 </div>
               )}
               <div className="flex items-center gap-3">
-                <button className="p-2 text-[#54656f] hover:bg-[#d1d7db] rounded-full transition-colors"><Smile size={24} /></button>
+               
                 <label className="p-2 text-[#54656f] hover:bg-[#d1d7db] rounded-full transition-colors cursor-pointer">
                   <Paperclip size={24} />
                   <input type="file" className="hidden" accept="image/*,video/*" onChange={handleFileChange} />
