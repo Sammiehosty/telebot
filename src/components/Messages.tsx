@@ -174,7 +174,7 @@ const Messages: React.FC = () => {
                     {conv.created_at ? new Date(conv.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}
                   </span>
                 </div>
-                <p className={`text-sm truncate ${!conv.is_read && conv.direction === 'inbound' ? 'font-bold text-[#111b21]' : 'text-[#667781]'}`}>
+                <p className={`text-xs truncate ${!conv.is_read && conv.direction === 'inbound' ? 'font-bold text-[#111b21]' : 'text-[#667781]'}`}>
                   {conv.direction === 'outbound' && <span className="opacity-70">You: </span>}
                   {conv.message_text || <span className="italic opacity-60">No messages yet. Click to start chat.</span>}
                 </p>
@@ -275,10 +275,7 @@ const Messages: React.FC = () => {
               )}
               <div className="flex items-center gap-3">
                
-                <label className="p-2 text-[#54656f] hover:bg-[#d1d7db] rounded-full transition-colors cursor-pointer">
-                  <Paperclip size={12} />
-                  <input type="file" className="hidden" accept="image/*,video/*" onChange={handleFileChange} />
-                </label>
+               
                 <form onSubmit={handleSend} className="flex-1 flex gap-3">
                   <input
                     type="text"
